@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="السلامي جروب - منتجات ومستلزمات تربية البط والكتاكيت">
+    <title>السلامي جروب | مستلزمات تربية البط والكتاكيت</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">🐥</span>
+                <span>
+                    <strong>السلامي</strong>
+                    <small>جروب</small>
+                </span>
+            </a>
+
+            <nav class="menu">
+                <a href="#home">الرئيسية</a>
+                <a href="#products">المنتجات</a>
+                <a href="#about">عن الشركة</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+
+            <button class="cart-btn" onclick="openCart()">
+                🛒
+                <span>السلة</span>
+                <b id="cartCount">0</b>
+            </button>
+
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <span class="badge">🐣 كل ما تحتاجه لمشروعك</span>
+
+                <h1>
+                    السلامي جروب
+                    <br>
+                    <span>لمستلزمات تربية البط والكتاكيت</span>
+                </h1>
+
+                <p>
+                    نوفر لك مجموعة متنوعة من المنتجات والمستلزمات
+                    التي تساعدك على تربية البط والكتاكيت بأفضل جودة.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#products" class="btn primary">تصفح المنتجات</a>
+                    <a href="#contact" class="btn secondary">تواصل معنا</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="circle"></div>
+                <div class="chick">🐥</div>
+                <div class="duck">🦆</div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container features-grid">
+
+            <div class="feature">
+                <div class="feature-icon">🚚</div>
+                <div>
+                    <h3>توصيل سريع</h3>
+                    <p>نوصل طلباتك في أسرع وقت</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⭐</div>
+                <div>
+                    <h3>جودة مضمونة</h3>
+                    <p>منتجات مختارة بعناية</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <div>
+                    <h3>أسعار مناسبة</h3>
+                    <p>أفضل قيمة مقابل السعر</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📞</div>
+                <div>
+                    <h3>خدمة العملاء</h3>
+                    <p>متواجدون لمساعدتك</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Products -->
+    <section class="products-section" id="products">
+
+        <div class="container">
+
+            <div class="section-title">
+                <span>منتجاتنا</span>
+                <h2>كل احتياجات التربية في مكان واحد</h2>
+                <p>اختر من مجموعة منتجات السلامي جروب</p>
+            </div>
+
+            <!-- Categories -->
+            <div class="categories">
+                <button class="category active" onclick="filterProducts('all', this)">
+                    الكل
+                </button>
+
+                <button class="category" onclick="filterProducts('feed', this)">
+                    أعلاف
+                </button>
+
+                <button class="category" onclick="filterProducts('equipment', this)">
+                    مستلزمات
+                </button>
+
+                <button class="category" onclick="filterProducts('care', this)">
+                    رعاية
+                </button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+
+                <!-- Product 1 -->
+                <div class="product-card" data-category="feed">
+
+                    <div class="product-image">
+                        <span class="product-tag">الأكثر مبيعاً</span>
+                        <div>🌾</div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">أعلاف</span>
+                        <h3>علف كتاكيت بادئ</h3>
+                        <p>علف عالي الجودة مناسب للكتاكيت في بداية التربية.</p>
+
+                        <div class="product-bottom">
+                            <strong>450 <small>جنيه</small></strong>
+
+                            <button onclick="addToCart('علف كتاكيت بادئ', 450)">
+                                + أضف للسلة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="feed">
+
+                    <div class="product-image">
+                        <span class="product-tag">جديد</span>
+                        <div>🌽</div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">أعلاف</span>
+                        <h3>علف بط نامي</h3>
+                        <p>تركيبة غذائية متوازنة لمراحل نمو البط.</p>
+
+                        <div class="product-bottom">
+                            <strong>500 <small>جنيه</small></strong>
+
+                            <button onclick="addToCart('علف بط نامي', 500)">
+                                + أضف للسلة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="equipment">
+
+                    <div class="product-image">
+                        <div>🥣</div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">مستلزمات</span>
+                        <h3>طبق تغذية للكتاكيت</h3>
+                        <p>طبق عملي وسهل التنظيف ومناسب للتربية.</p>
+
+                        <div class="product-bottom">
+                            <strong>75 <small>جنيه</small></strong>
+
+                            <button onclick="addToCart('طبق تغذية للكتاكيت', 75)">
+                                + أضف للسلة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="equipment">
+
+                    <div class="product-image">
+                        <div>💧</div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">مستلزمات</span>
+                        <h3>مسقى مياه</h3>
+                        <p>مسقى مياه عملية وسهلة الاستخدام والتنظيف.</p>
+
+                        <div class="product-bottom">
+                            <strong>90 <small>جنيه</small></strong>
+
+                            <button onclick="addToCart('مسقى مياه', 90)">
+                                + أضف للسلة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Product 5 -->
+                <div class="product-card" data-category="care">
+
+                    <div class="product-image">
+                        <div>💊</div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">رعاية</span>
+                        <h3>فيتامينات للدواجن</h3>
+                        <p>منتجات مساعدة لدعم صحة ونشاط الطيور.</p>
+
+                        <div class="product-bottom">
+                            <strong>180 <small>جنيه</small></strong>
+
+                            <button onclick="addToCart('فيتامينات للدواجن', 180)">
+                                + أضف للسلة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Product 6 -->
+                <div class="product-card" data-category="equipment">
+
+                    <div class="product-image">
+                        <div>🏠</div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">مستلزمات</span>
+                        <h3>لمبة تدفئة للكتاكيت</h3>
+                        <p>حل مناسب للتدفئة والحفاظ على درجة الحرارة.</p>
+
+                        <div class="product-bottom">
+                            <strong>220 <small>جنيه</small></strong>
+
+                            <button onclick="addToCart('لمبة تدفئة للكتاكيت', 220)">
+                                + أضف للسلة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container about-grid">
+
+            <div class="about-image">
+                <div class="about-icon">🐥</div>
+            </div>
+
+            <div class="about-text">
+                <span class="section-label">من نحن</span>
+
+                <h2>السلامي جروب</h2>
+
+                <p>
+                    نسعى في السلامي جروب لتوفير المنتجات والمستلزمات
+                    التي يحتاجها أصحاب مشاريع تربية البط والكتاكيت.
+                </p>
+
+                <p>
+                    هدفنا هو تقديم جودة جيدة، أسعار مناسبة،
+                    وخدمة تساعدك على تطوير مشروعك وتحقيق أفضل النتائج.
+                </p>
+
+                <div class="about-list">
+                    <div>✓ منتجات متنوعة</div>
+                    <div>✓ أسعار تنافسية</div>
+                    <div>✓ خدمة عملاء مميزة</div>
+                    <div>✓ اهتمام برضا العميل</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <div>
+                <span>هل تحتاج إلى مساعدة؟</span>
+                <h2>تواصل مع السلامي جروب الآن</h2>
+            </div>
+
+            <a href="https://wa.me/01151081822" target="_blank" class="whatsapp-btn">
+                💬 تواصل واتساب
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+                <span>تواصل معنا</span>
+                <h2>نحن هنا لخدمتك</h2>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+                    <div>📞</div>
+                    <h3>الهاتف</h3>
+                    <p>01287415290</p>
+                </div>
+
+                <div class="contact-card">
+                    <div>💬</div>
+                    <h3>واتساب</h3>
+                    <p>01151081822</p>
+                </div>
+
+                <div class="contact-card">
+                    <div>📍</div>
+                    <h3>العنوان</h3>
+                    <p>8 شارع اولاد شعبان متفرع من شارع عرب الطوايلة بجوار التوحيد والنور</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+
+            <div class="footer-logo">
+                🐥 <strong>السلامي جروب</strong>
+                <p>مستلزمات تربية البط والكتاكيت</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#home">الرئيسية</a>
+                <a href="#products">المنتجات</a>
+                <a href="#about">عن الشركة</a>
+                <a href="#contact">تواصل معنا</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 السلامي جروب - جميع الحقوق محفوظة
+        </div>
+    </footer>
+
+
+    <!-- Cart -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart(event)">
+
+        <div class="cart" onclick="event.stopPropagation()">
+
+            <div class="cart-header">
+                <h2>🛒 سلة المشتريات</h2>
+                <button onclick="closeCart()">×</button>
+            </div>
+
+            <div id="cartItems" class="cart-items">
+                <div class="empty-cart">
+                    السلة فارغة حالياً
+                </div>
+            </div>
+
+            <div class="cart-footer">
+
+                <div class="total">
+                    <span>الإجمالي:</span>
+                    <strong><span id="cartTotal">0</span> جنيه</strong>
+                </div>
+
+                <button class="checkout-btn" onclick="checkout()">
+                    إتمام الطلب عبر واتساب
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
